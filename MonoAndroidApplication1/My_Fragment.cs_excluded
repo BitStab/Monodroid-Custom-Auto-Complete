@@ -1,0 +1,33 @@
+/*using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+using Android.App;
+using Android.Content;
+using Android.OS;
+using Android.Runtime;
+using Android.Views;
+using Android.Widget;
+
+namespace MonoAndroidApplication1
+{
+	class My_Fragment : Fragment
+	{
+
+        public My_Fragment()
+        {
+        }
+
+        public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
+        {
+            var textToDisplay = new StringBuilder().Insert(0, "The quick brown fox jumps over the lazy dog. ", 450).ToString();
+            var view = inflater.Inflate(Resource.Layout.My_Fragment, container, false);
+            var textView = view.FindViewById<TextView>(Resource.Id.text_view);
+            textView.Text = textToDisplay;
+
+            return view;
+        }
+	}
+}
+*/

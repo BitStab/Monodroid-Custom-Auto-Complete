@@ -1,0 +1,19 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="MonoAndroidApplication1\Dashboard.cs">
+    <Files>
+      <File FileName="d:\Users\mstecher\Documents\Visual Studio 2010\Projects\MonoAndroidApplication1\MonoAndroidApplication1\Web References\ws_test\Reference.cs" Line="53" Column="14" />
+      <File FileName="MonoAndroidApplication1\Dashboard.cs" Line="1" Column="1" />
+      <File FileName="MonoAndroidApplication1\Logic.cs" Line="24" Column="9" />
+      <File FileName="MonoAndroidApplication1\Helpers\CustomerAdapter.cs" Line="1" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint file="D:\Users\mstecher\Documents\Visual Studio 2010\Projects\MonoAndroidApplication1\MonoAndroidApplication1\Logic.cs" line="45" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <AuthorInfo Name="mstecher" Email="" Copyright="mstecher" Company="" Trademark="" />
+  <MonoDevelop.Ide.ItemProperties.MonoAndroidApplication1 MonoForAntroid.PreferredDevice="3.7in WVGA (Nexus One)" />
+</Properties>

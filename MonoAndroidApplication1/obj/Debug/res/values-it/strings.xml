@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="Hello">Hello World, Click Me!</string>
+    <string name="ApplicationName">MonoAndroidApplication1</string>
+	<string-array name="dashboard">
+		<item>
+			Inserire Ordine vendita
+		</item>
+		<item>
+			Inserire Reso
+		</item>
+		<item>
+			Promozioni / Offerte
+		</item>
+		<item>
+			Conto Cliente
+		</item>
+		<item>
+			Change Customer
+		</item>
+	</string-array>
+</resources>

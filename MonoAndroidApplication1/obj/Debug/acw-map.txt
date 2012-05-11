@@ -1,0 +1,17 @@
+iNAV.Helpers.ItemListViewAdapter;inav.helpers.ItemListViewAdapter
+iNAV.Helpers.ItemListViewAdapterFilter;inav.helpers.ItemListViewAdapterFilter
+iNAV.Helpers.ItemAdapter;inav.helpers.ItemAdapter
+iNAV.Helpers.ItemSingle;inav.helpers.ItemSingle
+iNAV.Helpers.ItemAdapterFilter;inav.helpers.ItemAdapterFilter
+iNAV.SplashActivity;inav.SplashActivity
+iNAV.Dashboard;inav.Dashboard
+iNAV.Helpers.CustomerAdapter;inav.helpers.CustomerAdapter
+iNAV.Helpers.CustomerSingle;inav.helpers.CustomerSingle
+iNAV.Helpers.CustomerAdapterFilter;inav.helpers.CustomerAdapterFilter
+iNAV.MainActivity;inav.MainActivity
+iNAV.MainActivity.AnimatorUpdateListener;inav.MainActivity_AnimatorUpdateListener
+iNAV.MainActivity.ObjectAnimatorListenerAdapter;inav.MainActivity_ObjectAnimatorListenerAdapter
+iNAV.MainActivity.ObjectAnimatorListenerAdapter2;inav.MainActivity_ObjectAnimatorListenerAdapter2
+iNAV.MainActivity.MyDialogFragment;inav.MainActivity_MyDialogFragment
+iNAV.TitlesFragment;inav.TitlesFragment
+iNAV.TitlesFragment.MyDragShadowBuilder;inav.TitlesFragment_MyDragShadowBuilder

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/linearLayout1"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+	<TextView
+        android:id="@+id/txtItem"
+        android:layout_marginTop="10dp"
+        android:layout_alignParentTop="true"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Item: "
+        android:layout_marginLeft="5dp" />
+	<Button
+        android:id="@+id/btnAdd_to_Cart"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_below="@id/txtItem"
+        android:gravity="right"
+        android:clickable="true"
+        android:text="Add to Cart"
+        android:layout_weight="2"
+		android:layout_alignParentRight="true"/>
+	<AutoCompleteTextView
+        android:id="@+id/actv_Item"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_below="@id/txtItem"
+        android:hint="Enter Item..."
+        android:layout_weight="1" 
+		android:layout_toLeftOf="@id/btnAdd_to_Cart"
+        android:layout_alignParentLeft="true"
+		/>
+	<TextView
+        android:id="@+id/txtSelectedCustomer"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:text="" />
+	<ListView
+		android:id="@+id/dashboardList"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_alignParentLeft="true"
+		android:layout_alignParentRight="true"
+		android:layout_below="@id/btnAdd_to_Cart"
+		android:layout_above="@id/txtSelectedCustomer"
+		android:layout_weight="1"/>
+	
+</RelativeLayout>

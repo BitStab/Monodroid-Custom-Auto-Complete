@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:tns="urn:microsoft-dynamics-schemas/codeunit/Test" targetNamespace="urn:microsoft-dynamics-schemas/codeunit/Test" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <schema xmlns:tns="urn:microsoft-dynamics-nav/xmlports/x50001" elementFormDefault="qualified" targetNamespace="urn:microsoft-dynamics-nav/xmlports/x50001" xmlns="http://www.w3.org/2001/XMLSchema">
+      <complexType name="Item">
+        <sequence>
+          <element minOccurs="1" maxOccurs="1" name="No_" type="string" />
+          <element minOccurs="1" maxOccurs="1" name="Description" type="string" />
+          <element minOccurs="1" maxOccurs="1" name="Unit_List_Price" type="string" />
+          <element minOccurs="1" maxOccurs="1" name="Unit_Price" type="string" />
+          <element minOccurs="1" maxOccurs="1" name="Sales_Unit_of_Measure" type="string" />
+        </sequence>
+      </complexType>
+      <complexType name="rootItem" mixed="true">
+        <sequence>
+          <element minOccurs="0" maxOccurs="unbounded" name="Item" type="tns:Item" />
+        </sequence>
+      </complexType>
+      <element name="rootItem" type="tns:rootItem" />
+    </schema>
+    <schema xmlns:tns="urn:microsoft-dynamics-nav/xmlports/x50000" elementFormDefault="qualified" targetNamespace="urn:microsoft-dynamics-nav/xmlports/x50000" xmlns="http://www.w3.org/2001/XMLSchema">
+      <complexType name="Customer">
+        <sequence>
+          <element minOccurs="1" maxOccurs="1" name="No_" type="string" />
+          <element minOccurs="1" maxOccurs="1" name="Name" type="string" />
+          <element minOccurs="1" maxOccurs="1" name="Address" type="string" />
+          <element minOccurs="1" maxOccurs="1" name="Address2" type="string" />
+          <element minOccurs="1" maxOccurs="1" name="Salesperson_Code" type="string" />
+        </sequence>
+      </complexType>
+      <complexType name="rootCustomer" mixed="true">
+        <sequence>
+          <element minOccurs="0" maxOccurs="unbounded" name="Customer" type="tns:Customer" />
+        </sequence>
+      </complexType>
+      <element name="rootCustomer" type="tns:rootCustomer" />
+    </schema>
+    <schema xmlns:tns="urn:microsoft-dynamics-nav/xmlports/iNav" elementFormDefault="qualified" targetNamespace="urn:microsoft-dynamics-nav/xmlports/iNav" xmlns="http://www.w3.org/2001/XMLSchema">
+      <complexType name="Lines">
+        <sequence>
+          <element minOccurs="1" maxOccurs="1" name="Type" type="string" />
+          <element minOccurs="1" maxOccurs="1" name="No" type="string" />
+          <element minOccurs="1" maxOccurs="1" default="0" name="Quantity" type="decimal" />
+          <element minOccurs="1" maxOccurs="1" name="Unit_Of_Measure_Code" type="string" />
+          <element minOccurs="1" maxOccurs="1" default="0" name="Line_Discount_Pct" type="decimal" />
+        </sequence>
+      </complexType>
+      <complexType name="SalesHeader">
+        <sequence>
+          <element minOccurs="1" maxOccurs="1" name="Sell_To_Customer_No" type="string" />
+          <element minOccurs="1" maxOccurs="1" name="Payment_Terms_Code" type="string" />
+          <element minOccurs="1" maxOccurs="unbounded" name="Lines" type="tns:Lines" />
+        </sequence>
+      </complexType>
+      <complexType name="RootSalesHeader" mixed="true">
+        <sequence>
+          <element minOccurs="1" maxOccurs="1" name="SalesHeader" type="tns:SalesHeader" />
+        </sequence>
+      </complexType>
+      <element name="RootSalesHeader" type="tns:RootSalesHeader" />
+    </schema>
+    <schema elementFormDefault="qualified" targetNamespace="urn:microsoft-dynamics-schemas/codeunit/Test" xmlns="http://www.w3.org/2001/XMLSchema">
+      <element name="Authentication">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="username" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="password" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="Authentication_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="boolean" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="GetItems">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="search" type="string" />
+            <element xmlns:q1="urn:microsoft-dynamics-nav/xmlports/x50001" minOccurs="1" maxOccurs="1" name="itemPort" type="q1:rootItem" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="GetItems_Result">
+        <complexType>
+          <sequence>
+            <element xmlns:q2="urn:microsoft-dynamics-nav/xmlports/x50001" minOccurs="1" maxOccurs="1" name="itemPort" type="q2:rootItem" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="GetCustomers">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="search" type="string" />
+            <element xmlns:q3="urn:microsoft-dynamics-nav/xmlports/x50000" minOccurs="1" maxOccurs="1" name="customerPort" type="q3:rootCustomer" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="GetCustomers_Result">
+        <complexType>
+          <sequence>
+            <element xmlns:q4="urn:microsoft-dynamics-nav/xmlports/x50000" minOccurs="1" maxOccurs="1" name="customerPort" type="q4:rootCustomer" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="CreateSalesOrder">
+        <complexType>
+          <sequence>
+            <element xmlns:q5="urn:microsoft-dynamics-nav/xmlports/iNav" minOccurs="1" maxOccurs="1" name="salesHeaderPort" type="q5:RootSalesHeader" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="CreateSalesOrder_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+            <element xmlns:q6="urn:microsoft-dynamics-nav/xmlports/iNav" minOccurs="1" maxOccurs="1" name="salesHeaderPort" type="q6:RootSalesHeader" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="CreateFakeSalesOrder">
+        <complexType>
+          <sequence>
+            <element xmlns:q7="urn:microsoft-dynamics-nav/xmlports/iNav" minOccurs="1" maxOccurs="1" name="salesHeaderPort" type="q7:RootSalesHeader" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="CreateFakeSalesOrder_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="decimal" />
+            <element xmlns:q8="urn:microsoft-dynamics-nav/xmlports/iNav" minOccurs="1" maxOccurs="1" name="salesHeaderPort" type="q8:RootSalesHeader" />
+          </sequence>
+        </complexType>
+      </element>
+    </schema>
+  </types>
+  <message name="Authentication">
+    <part name="parameters" element="tns:Authentication" />
+  </message>
+  <message name="Authentication_Result">
+    <part name="parameters" element="tns:Authentication_Result" />
+  </message>
+  <message name="GetItems">
+    <part name="parameters" element="tns:GetItems" />
+  </message>
+  <message name="GetItems_Result">
+    <part name="parameters" element="tns:GetItems_Result" />
+  </message>
+  <message name="GetCustomers">
+    <part name="parameters" element="tns:GetCustomers" />
+  </message>
+  <message name="GetCustomers_Result">
+    <part name="parameters" element="tns:GetCustomers_Result" />
+  </message>
+  <message name="CreateSalesOrder">
+    <part name="parameters" element="tns:CreateSalesOrder" />
+  </message>
+  <message name="CreateSalesOrder_Result">
+    <part name="parameters" element="tns:CreateSalesOrder_Result" />
+  </message>
+  <message name="CreateFakeSalesOrder">
+    <part name="parameters" element="tns:CreateFakeSalesOrder" />
+  </message>
+  <message name="CreateFakeSalesOrder_Result">
+    <part name="parameters" element="tns:CreateFakeSalesOrder_Result" />
+  </message>
+  <portType name="Test_Port">
+    <operation name="Authentication">
+      <input name="Authentication" message="tns:Authentication" />
+      <output name="Authentication_Result" message="tns:Authentication_Result" />
+    </operation>
+    <operation name="GetItems">
+      <input name="GetItems" message="tns:GetItems" />
+      <output name="GetItems_Result" message="tns:GetItems_Result" />
+    </operation>
+    <operation name="GetCustomers">
+      <input name="GetCustomers" message="tns:GetCustomers" />
+      <output name="GetCustomers_Result" message="tns:GetCustomers_Result" />
+    </operation>
+    <operation name="CreateSalesOrder">
+      <input name="CreateSalesOrder" message="tns:CreateSalesOrder" />
+      <output name="CreateSalesOrder_Result" message="tns:CreateSalesOrder_Result" />
+    </operation>
+    <operation name="CreateFakeSalesOrder">
+      <input name="CreateFakeSalesOrder" message="tns:CreateFakeSalesOrder" />
+      <output name="CreateFakeSalesOrder_Result" message="tns:CreateFakeSalesOrder_Result" />
+    </operation>
+  </portType>
+  <binding name="Test_Binding" type="tns:Test_Port">
+    <binding transport="http://schemas.xmlsoap.org/soap/http" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+    <operation name="Authentication">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/Test:Authentication" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="Authentication">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="Authentication_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="GetItems">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/Test:GetItems" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="GetItems">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="GetItems_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="GetCustomers">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/Test:GetCustomers" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="GetCustomers">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="GetCustomers_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="CreateSalesOrder">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/Test:CreateSalesOrder" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="CreateSalesOrder">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="CreateSalesOrder_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="CreateFakeSalesOrder">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/Test:CreateFakeSalesOrder" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="CreateFakeSalesOrder">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="CreateFakeSalesOrder_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+  </binding>
+  <service name="Test">
+    <port name="Test_Port" binding="tns:Test_Binding">
+      <address location="http://localhost:7047/DynamicsNAV/WS/CRONUS%20Italia%20S.p.A/Codeunit/Test" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+    </port>
+  </service>
+</definitions>

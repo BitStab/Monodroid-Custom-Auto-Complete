@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/dialog_view"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+    <TextView
+        android:id="@+id/txtfield"
+        android:layout_marginTop="10dp"
+        android:layout_alignParentTop="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Customer"
+        android:layout_marginLeft="5dp" />
+    <AutoCompleteTextView
+        android:id="@+id/autocomplete"
+        android:layout_below="@id/txtfield"
+        android:layout_centerHorizontal="true"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:hint="Enter Customer..." />
+    <LinearLayout
+        android:id="@+id/button_frame"
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="80.0dp"
+        android:layout_below="@id/autocomplete">
+        <Button
+            android:text="Select"
+            android:id="@+id/btnSelect"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+        <Button
+            android:text="Cancel"
+            android:id="@+id/btnCancel"
+            android:layout_alignRight="@id/btnSelect"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+    </LinearLayout>
+</RelativeLayout>

@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+	<style name="Theme.Splash" parent="android:Theme">
+		<item name="android:windowBackground">@drawable/splash</item>
+		<item name="android:windowNoTitle">true</item>
+	</style>
+	<style name="ActionBar" parent="@android:style/Widget.Holo.ActionBar" />
+
+	<style name="ActionBar.Light" parent="@style/ActionBar">
+		<item name="android:background">@color/actionbar_background_light</item>
+	</style>
+
+	<style name="ActionBar.Dark" parent="@style/ActionBar">
+		<item name="android:background">@color/actionbar_background_dark</item>
+	</style>
+
+	<style name="AppTheme.Light" parent="@android:style/Theme.Holo.Light">
+		<item name="android:actionBarStyle">@style/ActionBar.Light</item>
+		<item name="android:windowActionBarOverlay">true</item>
+		<item name="listDragShadowBackground">@android:color/background_light</item>
+		<item name="menuIconCamera">@drawable/ic_menu_camera_holo_light</item>
+		<item name="menuIconToggle">@drawable/ic_menu_toggle_holo_light</item>
+		<item name="menuIconShare">@drawable/ic_menu_share_holo_light</item>
+	</style>
+
+	<style name="AppTheme.Dark" parent="@android:style/Theme.Holo">
+		<item name="android:actionBarStyle">@style/ActionBar.Dark</item>
+		<item name="android:windowActionBarOverlay">true</item>
+		<item name="listDragShadowBackground">@android:color/background_dark</item>
+		<item name="menuIconCamera">@drawable/ic_menu_camera_holo_dark</item>
+		<item name="menuIconToggle">@drawable/ic_menu_toggle_holo_dark</item>
+		<item name="menuIconShare">@drawable/ic_menu_share_holo_dark</item>
+	</style>
+</resources>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="Hello">Hello World, Click Me!</string>
+    <string name="app_name">Brendolan Example</string>
+	<string-array name="dashboard">
+		<item>
+			Place Order
+		</item>
+		<item>
+			Place Return
+		</item>
+		<item>
+			Promotions / Offers
+		</item>
+		<item>
+			Customers Balance
+		</item>
+		<item>
+			Change Customer
+		</item>
+	</string-array>
+	
+	<string name="camera_sample">Camera Example</string>
+	<string name="clip_label">Clip Label</string>
+
+	<string name="app_widget_name">Example Widget</string>
+	<string name="widget_empty_view_text">Touch to show data</string>
+
+	<string name="notification_text">Example notification text</string>
+
+	<string name="photo_selection_cab_title">Photo selection</string>
+</resources>
